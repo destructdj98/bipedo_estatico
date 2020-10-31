@@ -1,0 +1,276 @@
+<?xml version = "1.0"?>
+
+<robot name = "rb" >
+    <link name = "base_link">
+        <visual>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/base.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/base.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value = "4.936835" />
+            <inertia ixx = "2.452350" ixy = "0" ixz = "0" iyy = "2.438750" iyz = "0" izz = "0.064078"/>
+            <origin rpy = "0 0 0" xyz = "0 0 0.549293" />
+        </inertial>
+    </link>
+
+    <joint name = "base_link_link_01" type = "revolute" >
+        <parent link = "base_link" />
+        <child link = "link_01" />
+        <origin ryp = "0 0 0" xyz = "0 -0.215 1" />
+        <axis xyz = "0 1 0" />
+        <limit effort = "10" lower = "-3.14" upper = "3.14" velocity = "0.5" />
+    </joint>
+
+    <transmission name = "trans_base_link_link_01">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name = "base_link_link_01">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name = "motor_base_link_link_01">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name = "link_01">
+        <visual>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_01.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_01.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value = "0.521" />
+            <inertia ixx = "0.013" ixy = "0" ixz = "0" iyy = "0.013" iyz = "0" izz = "0"/>
+            <origin rpy = "0 0 0" xyz = "0 0 -0.132" />
+        </inertial>
+    </link>
+
+    <joint name = "link_01_link_02" type = "revolute" >
+        <parent link = "link_01" />
+        <child link = "link_02" />
+        <origin ryp = "0 0 0" xyz = "0 0 -0.3" />
+        <axis xyz = "0 1 0" />
+        <limit effort = "10" lower = "-3.14" upper = "3.14" velocity = "0.5" />
+    </joint>
+
+    <transmission name = "trans_link_01_link_02">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name = "link_01_link_02">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name = "motor_link_01_link_02">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name = "link_02">
+        <visual>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_02.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_02.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value = "0.513" />
+            <inertia ixx = "0.013" ixy = "0" ixz = "0" iyy = "0.013" iyz = "0" izz = "0"/>
+            <origin rpy = "0 0 0" xyz = "0 0 -0.133" />
+        </inertial>
+    </link>
+
+    <joint name = "link_02_link_03" type = "revolute" >
+        <parent link = "link_02" />
+        <child link = "link_03" />
+        <origin ryp = "0 0 0" xyz = "0 0 -0.3" />
+        <axis xyz = "0 1 0" />
+        <limit effort = "10" lower = "-3.14" upper = "3.14" velocity = "0.5" />
+    </joint>
+
+    <transmission name = "trans_link_02_link_03">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name = "link_02_link_03">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name = "motor_link_02_link_03">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name = "link_03">
+        <visual>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_03.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_03.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value = "0.169" />
+            <inertia ixx = "0"  ixy = "0" ixz = "0" iyy = "0" iyz = "0" izz = "0"/>
+            <origin rpy = "0 0 0" xyz = "0 0 -0.027" />
+        </inertial>
+    </link>
+
+    <joint name = "base_link_link_04" type = "revolute" >
+        <parent link = "base_link" />
+        <child link = "link_04" />
+        <origin ryp = "0 0 0" xyz = "0 0.215 1" />
+        <axis xyz = "0 1 0" />
+        <limit effort = "10" lower = "-3.14" upper = "3.14" velocity = "0.5" />
+    </joint>
+
+    <transmission name = "trans_base_link_link_04">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name = "base_link_link_04">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name = "motor_base_link_link_04">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name = "link_04">
+        <visual>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_01.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_01.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value = "0.521" />
+            <inertia ixx = "0.013" ixy = "0" ixz = "0" iyy = "0.013" iyz = "0" izz = "0"/>
+            <origin rpy = "0 0 0" xyz = "0 0 -0.132" />
+        </inertial>
+    </link>
+
+    <joint name = "link_04_link_05" type = "revolute" >
+        <parent link = "link_04" />
+        <child link = "link_05" />
+        <origin ryp = "0 0 0" xyz = "0 0 -0.3" />
+        <axis xyz = "0 1 0" />
+        <limit effort = "10" lower = "-3.14" upper = "3.14" velocity = "0.5" />
+    </joint>
+
+    <transmission name = "trans_link_04_link_05">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name = "link_04_link_05">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name = "motor_link_04_link_05">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name = "link_05">
+        <visual>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_02.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_02.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value = "0.513" />
+            <inertia ixx = "0.013" ixy = "0" ixz = "0" iyy = "0.013" iyz = "0" izz = "0"/>
+            <origin rpy = "0 0 0" xyz = "0 0 -0.133" />
+        </inertial>
+    </link>
+
+   <joint name = "link_05_link_06" type = "revolute" >
+        <parent link = "link_05" />
+        <child link = "link_06" />
+        <origin ryp = "0 0 0" xyz = "0 0 -0.3" />
+        <axis xyz = "0 1 0" />
+        <limit effort = "10" lower = "-3.14" upper = "3.14" velocity = "0.5" />
+    </joint>
+
+    <transmission name = "trans_link_05_link_06">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name = "link_05_link_06">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name = "motor_link_05_link_06">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name = "link_06">
+        <visual>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_03.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <mesh filename = "package://bipedo_d/meshes/link_03.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value = "0.169" />
+            <inertia ixx = "0"  ixy = "0" ixz = "0" iyy = "0" iyz = "0" izz = "0"/>
+            <origin rpy = "0 0 0" xyz = "0 0 -0.027" />
+        </inertial>
+    </link>
+
+    <gazebo>
+        <plugin name = "gazebo_ros_control" filename = "libgazebo_ros_control.so">
+        </plugin>
+    </gazebo>
+</robot>
